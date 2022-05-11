@@ -1,0 +1,286 @@
+{%- macro drugbox(Name,  imageURL, amass, mmass, ChEBI, ChemSpiderID, info_Administration, melting_point, boiling_point, solubility, boiling_notes, melting_notes, pregnancy_category, ATC_prefix, ATC_suffix, ATC_supplemental, metabolism, protein_bound, elimination_half_life, excretion, CAS_number, CAS_supplemental, PubChem, PubChemSubstance, IUPHAR_ligand, DrugBank_Ref, DrugBank, ChemSpiderID_Ref, UNII_Ref, UNII, KEGG_Ref, KEGG,  KEGG2,ChEBI_Ref, ChEMBL, NIAID_ChemDB,PDB_ligand, synonyms) -%}
+
+
+{{'{{drugbox'}}
+|name   = {{name }}
+{% if imageURL != None and imageURL != '' -%}
+|image       = {{imageURL}}
+|caption     = {{Name}}
+{%- endif %}
+{%- if  KEGG !=None and KEGG != '' %}
+|KEGG   = {{KEGG}}
+{%- endif %}
+{%- if PubChemSubstance != None and PubChemSubstance != '' %}
+|PubChemSubstance   = {{PubChemSubstance}} 
+{%- endif %}
+{%- if pregnancy_category != None and pregnancy_category != '' %}
+|pregnancy_category   = {{pregnancy_category}} 
+{%- endif %}
+{%- if ATC_prefix != None and ATC_prefix != '' %}
+|ATC_prefix   = {{ATC_prefix}} 
+{%- endif %}
+{%- if ATC_suffix != None and ATC_suffix != '' %}
+|ATC_suffix   = {{ATC_suffix}} 
+{%- endif %}
+{%- if ATC_supplemental != None and ATC_supplemental != '' %}
+|ATC_supplemental   = {{ATC_supplemental}} 
+{%- endif %}
+{%- if ChEMBL != None and ChEMBL != '' %}
+|ChEMBL   = {{ChEMBL}} 
+{%- endif %}
+{%- if CAS_number != None and CAS_number != '' %}
+|CAS_number   = {{CAS_number}} 
+{%- endif %}
+{%- if ChEBI != None and ChEBI != '' %}
+|ChEBI   = {{ChEBI}} 
+{%- endif %}
+{%- if ChemSpiderID != None and ChemSpiderID != '' %}
+|ChemSpiderID   = {{ChemSpiderID}} 
+{%- endif %}
+{%- if IUPHAR_ligand != None and IUPHAR_ligand != '' %}
+|IUPHAR_ligand         = {{IUPHAR_ligand }}
+{%- endif %}
+{%- if UNII != None and UNII != '' %}
+|UNII            = {{UNII}}
+{%- endif %}
+{%- if DrugBank != None and DrugBank != '' %}
+|DrugBank            = {{DrugBank}}
+{%- endif %}
+{%- if info_Administration != None and info_Administration != '' %}
+|routes_of_administration     = {{info_Administration}}
+{%- endif %}
+{%- if elimination_half_life != None and elimination_half_life != '' %}
+|elimination_half-life     = {{elimination_half_life}}
+{%- endif %}
+{%- if protein_bound != None and protein_bound != '' %}
+|protein_bound = {{protein_bound}}
+{%- endif -%}
+{%- if Metabolism != None and Metabolism != '' %}
+|metabolism = {{Metabolism}}
+{%- endif -%}
+{%- if Excretion != None and Excretion != '' %}
+|excretion = {{Excretion}}
+{%- endif -%}
+{%- if synonyms != None and synonyms != '' %}
+|synonyms = {{synonyms}}
+{%- endif -%}
+{%- if melting_point != None and melting_point != '' %}
+|melting_point = {{melting_point}}
+{%- endif -%}
+{%- if melting_notes != None and melting_notes != '' %}
+|melting_notes = {{melting_notes}}
+{%- endif -%}
+{%- if boiling_point != None and boiling_point != '' %}
+|boiling_point = {{boiling_point}}
+{%- endif -%}
+{%- if boiling_notes != None and boiling_notes != '' %}
+|boiling_notes = {{boiling_notes}}
+{%- endif -%}
+{%- if solubility != None and solubility != '' %}
+|solubility = {{solubility}}
+{%- endif -%}
+
+{{'\n}}'}}
+{%- endmacro -%}
+
+{%- macro overview(Overview) -%}
+	{% if Overview != None and Overview != '' %}
+==अवलोकन==
+{{Overview}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro symptoms(Symptoms) -%}
+	{% if Symptoms != None and Symptoms != '' %}
+==[[लक्षण]]==
+{{Symptoms}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro administration(Administration) -%}
+	{% if Administration != None and Administration != '' %}
+==क्रियान्वयन==
+{{Administration}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro description(Description) -%}
+	{% if Description != None and Description != '' %}
+==विवरण==
+{{Description}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro halflife(Halflife) -%}
+	{% if Halflife != None and Halflife != '' %}
+==आधी सांद्रता की अवधि ==
+{{Halflife}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro contraindications(Contraindications) -%}
+	{% if Contraindications != None and Contraindications != '' %}
+==विपरीत संकेत==
+{{Contraindications}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro special_Precautions(Special_Precautions) -%}
+	{% if Special_Precautions != None and Special_Precautions != '' %}
+==विशेष सावधानियाँ==
+{{Special_Precautions}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro storage(Storage) -%}
+	{% if Storage != None and Storage != '' %}
+==संचयन/भंडारण==
+{{Storage}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro overdosage(Overdosage) -%}
+	{% if Overdosage != None and Overdosage != '' %}
+==अधिक मात्रा के दुष्प्रभाव==
+{{Overdosage}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro metabolism(Metabolism) -%}
+	{% if Metabolism != None and Metabolism != '' %}
+==उपापचय==
+{{Metabolism}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro indication(Indication) -%}
+	{% if Indication != None and Indication != '' %}
+==संकेत==
+{{Indication}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro pharmacodynamics(Pharmacodynamics) -%}
+	{% if Pharmacodynamics != None and Pharmacodynamics != '' %}
+==फार्माकोडायनामिक्स==
+{{Pharmacodynamics}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro proteinbinding(Proteinbinding) -%}
+	{% if Proteinbinding != None and Proteinbinding != '' %}
+==प्रोबूजेन निबंध==
+{{Proteinbinding}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro absorption(Absorption) -%}
+	{% if Absorption != None and Absorption != '' %}
+==अवशोषण==
+{{Absorption}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro food_interactions(Food_interactions) -%}
+	{% if Food_interactions != None and Food_interactions != '' %}
+==भोजन के साथ प्रतिक्रिया==
+{{Food_interactions}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro drug_interactions(Drug_interactions) -%}
+	{% if Drug_interactions != None and Drug_interactions != '' %}
+==दवाओं का पारस्परिक प्रभाव==
+{{Drug_interactions}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro adverse_Reactions(Adverse_Reactions) -%}
+	{% if Adverse_Reactions != None and Adverse_Reactions != '' %}
+==विपरीत प्रतिक्रियाएं==
+{{Adverse_Reactions}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro toxicity(Toxicity) -%}
+	{% if Toxicity != None and Toxicity != '' %}
+==विषाक्तता==
+{{Toxicity}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro synthesis_ref(Synthesis_ref) -%}
+	{% if Synthesis_ref != None and Synthesis_ref != '' %}
+==संश्लेषण संदर्भ==
+{{Synthesis_ref}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro moa(Moa) -%}
+	{% if Moa != None and Moa != '' %}
+==कार्रवाई की प्रणाली==
+{{Moa}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro vod(Vod) -%}
+	{% if Vod != None and Vod != '' %}
+==वितरण की मात्रा==
+{{Vod}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro classification(Classification) -%}
+	{% if Classification != None and Classification != '' %}
+==वर्गीकरण==
+{{Classification}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro references_categories(Categories, References, External_links) -%} 
+	{% if Categories != None and Categories != '' %}
+==सन्दर्भ==
+{{Categories}}
+		{% if References != None and References != '' %}
+{{References}}
+		{%- endif %}
+		{% if External_links != None and External_links != '' %}
+{{External_links}}
+		{%- endif %}
+	{%- endif %}
+{% endmacro %}
+
+
+{{- drugbox(Name,  imageURL, ChEBI, ChemSpiderID, info_Administration, melting_point, boiling_point, solubility, boiling_notes, melting_notes, pregnancy_category, ATC_prefix, ATC_suffix, ATC_supplemental, metabolism, protein_bound, elimination_half_life, excretion, CAS_number, CAS_supplemental, PubChem, PubChemSubstance, IUPHAR_ligand, DrugBank_Ref, DrugBank, ChemSpiderID_Ref, UNII_Ref, UNII, KEGG_Ref, KEGG,  KEGG2,ChEBI_Ref, ChEMBL, NIAID_ChemDB,PDB_ligand, synonyms) -}}
+
+{{ description(Description) -}}
+
+{{ indication(Indication) -}}
+
+{{ metabolism(Metabolism) -}}
+
+{{ absorption(Absorption) -}}
+
+{{ vod(Vod) -}}
+
+{{ moa(Moa) -}}
+
+{{ special_Precautions(Special_Precautions) -}}
+
+{{ contraindications(Contraindications) -}}
+
+{{ overdosage(Overdosage) -}}
+
+{{ adverse_Reactions(Adverse_Reactions) -}}
+
+{{ toxicity(Toxicity) -}}
+
+{{ food_interactions(Food_interactions) -}}
+
+{{ drug_interactions(Drug_interactions) -}}
+
+{{ synthesis_ref(Synthesis_ref) -}}
+
+{{ classification(Classification) -}}
+
+{{ references_categories(Categories, References, External_links) -}}
